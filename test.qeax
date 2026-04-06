@@ -30,6 +30,9 @@ CREATE TABLE t_attribute
 	ea_guid TEXT NULL COLLATE NOCASE,
 	StyleEx TEXT NULL COLLATE NOCASE
 );
+INSERT INTO t_attribute VALUES(3,'first_name','Private',NULL,'Not Specified',0,0,0,0,'1','1',NULL,NULL,NULL,1,0,NULL,NULL,NULL,NULL,NULL,NULL,'0',NULL,'char','{8CA3E72E-CF52-4ad4-A503-1EC981574F14}','volatile=0;');
+INSERT INTO t_attribute VALUES(3,'last_name','Private',NULL,'Not Specified',0,0,0,0,'1','1',NULL,NULL,NULL,2,1,NULL,NULL,NULL,NULL,NULL,NULL,'0',NULL,'char','{3AA71821-C674-4579-9378-02A35B095E33}','volatile=0;');
+INSERT INTO t_attribute VALUES(2,'name','Private',NULL,'Not Specified',0,0,0,0,'1','1',NULL,NULL,NULL,3,0,NULL,NULL,NULL,NULL,NULL,NULL,'0',NULL,'char','{85F02A16-94D4-4c08-ABCC-63ACD04A59F1}','volatile=0;');
 CREATE TABLE t_attributeconstraints
 (
 	Object_ID INTEGER NULL DEFAULT 0,
@@ -178,6 +181,7 @@ CREATE TABLE t_connector
 	DestStyle TEXT NULL COLLATE NOCASE,
 	EventFlags TEXT NULL COLLATE NOCASE
 );
+INSERT INTO t_connector VALUES(1,'works for','Source -> Destination',NULL,'Association',NULL,'1..*','Public',NULL,'1','Public',NULL,'department',NULL,'Department','Unspecified',0,0,NULL,'employees',NULL,'Employees','Unspecified',0,0,NULL,3,2,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,0,0,0,0,0,3,0,-1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'SX=0;SY=0;EX=0;EY=0;',0,'{544DC6BD-2F0E-43b8-A642-203D702BCB69}',NULL,NULL,0,1,0,0,NULL,'none','none','instance','instance',NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,'Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;','Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;',NULL);
 CREATE TABLE t_connectorconstraint
 (
 	ConnectorID INTEGER NOT NULL DEFAULT 0,
@@ -898,6 +902,11 @@ INSERT INTO t_datatypes VALUES('DDL','DB2','GRAPHIC',1,127,0,0,1,0,0,0,'1','1','
 INSERT INTO t_datatypes VALUES('DDL','DB2','LONG VARGRAPHIC',0,0,0,0,0,0,0,0,'1','1','1','1','1','longvargraphic',824);
 INSERT INTO t_datatypes VALUES('DDL','DB2','VARGRAPHIC',1,16336,0,0,1,0,0,0,'1','1','1','1','1','vargraphic',825);
 INSERT INTO t_datatypes VALUES('DDL','Sybase ASE','varbinary',1,255,0,0,1,0,0,0,'1','1','1','1','1','varbinary',826);
+INSERT INTO t_datatypes VALUES('Code','Java','char',NULL,NULL,NULL,0,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,'Character',827);
+INSERT INTO t_datatypes VALUES('Code','Java','short',NULL,NULL,NULL,0,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,'Integer',828);
+INSERT INTO t_datatypes VALUES('Code','Java','long',NULL,NULL,NULL,0,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,'Integer',829);
+INSERT INTO t_datatypes VALUES('Code','Java','float',NULL,NULL,NULL,0,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,'Real',830);
+INSERT INTO t_datatypes VALUES('Code','Java','double',NULL,NULL,NULL,0,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,'Real',831);
 CREATE TABLE t_diagram
 (
 	Diagram_ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
@@ -930,6 +939,7 @@ CREATE TABLE t_diagram
 	Swimlanes TEXT NULL COLLATE NOCASE,
 	StyleEx TEXT NULL COLLATE NOCASE
 );
+INSERT INTO t_diagram VALUES(1,2,0,'Logical','Organization','1.000000000','Igor',0,NULL,NULL,1,1,1,'P',827,1075,100,'2026-04-06 10:35:18','2026-04-06 10:55:13',NULL,1,1,1,'HideRel=0;ShowTags=0;ShowReqs=0;ShowCons=0;OpParams=1;ShowSN=0;ScalePI=0;PPgs.cx=0;PPgs.cy=0;PSize=1;ShowIcons=1;SuppCN=0;HideProps=0;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideEStereo=0;ShowRec=1;ShowRes=0;ShowShape=1;FormName=;',0,'{50085AF8-39C9-44dd-89E2-23B3ADB7A052}',NULL,'locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;','ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.100000000;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=0DE5AB46;');
 CREATE TABLE t_diagramlinks
 (
 	DiagramID INTEGER NULL,
@@ -940,6 +950,7 @@ CREATE TABLE t_diagramlinks
 	Path TEXT NULL COLLATE NOCASE,
 	Instance_ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
 );
+INSERT INTO t_diagramlinks VALUES(1,1,'SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=50:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=CX=38:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMB=;LRT=CX=53:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=6:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;','Mode=3;EOID=CB73D3CC;SOID=DA1EEDEB;Color=-1;LWidth=0;',0,NULL,1);
 CREATE TABLE t_diagramobjects
 (
 	Diagram_ID INTEGER NULL DEFAULT 0,
@@ -952,6 +963,8 @@ CREATE TABLE t_diagramobjects
 	ObjectStyle TEXT NULL COLLATE NOCASE,
 	Instance_ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
 );
+INSERT INTO t_diagramobjects VALUES(1,2,-90,432,522,-160,2,'DUID=CB73D3CC;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;',1);
+INSERT INTO t_diagramobjects VALUES(1,3,-90,96,186,-160,1,'DUID=DA1EEDEB;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;',2);
 CREATE TABLE t_diagramtypes
 (
 	Diagram_Type TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
@@ -1038,6 +1051,7 @@ CREATE TABLE t_genopt
 INSERT INTO t_genopt VALUES('CMACRO','_AFX_NO_DEBUG_CRT;_AFX_NO_OCC_SUPPORT;_AFX_OLD_EXCEPTIONS;_AFX_PACKING;_AFXDLL;_DEBUG;_MSC_VER;_UNICODE;AFX_CDECL;AFX_COMDAT;AFX_DATA;AFX_DATADEF;AFX_NOVTABLE;AFXAPI;APICALL;BEGIN_INTERFACE_PART ^ END_INTERFACE_PART;BEGIN_PARAM_MAP ^ END_PARAM_MAP;CONTROLLER_API;DECLARE_DYNAMIC();DECLARE_DYNCREATE();DECLARE_INTERFACE_MAP();DECLARE_MESSAGE_MAP();defined();PASCAL;SWLAPI;WINAPI;');
 INSERT INTO t_genopt VALUES('Status','1');
 INSERT INTO t_genopt VALUES('class',unistr('nKill=0;nLang=1;sLang=Java;bConstructor=1;bConInline=0;sConScope=Public;bCpyConstructor=0;bCpyConInline=0;sCpyConScope=Public;bDestructor=1;bDesVirtual=1;bDesInline=0;sDesScope=Public;CHeader=.h;CBody=.cpp;JBody=.java;VBody=.cls;VBNetBody=.vb;WFSBody=.vbs;JavaScriptBody=.js;ModelicaBody=.mo;MDGBPSimExecutionEngineExtensionBody=;sAssocName=m_$LinkClass;bGetSet=1;bGenInterfaces=1;JCol=Vector;CCol=[];VCol=Collection;bVMultiuse=1;bVPersist=0;bVDatabind=0;bVDatasource=0;bVGlobal=0;bVCreatable=1;bVExposed=0;sMTS=0;sCRefType=*;sCGetPrefix=Get;sCSetPrefix=Set;sJGetPrefix=get;sJSetPrefix=set;sCSGetPrefix=Get;sCSSetPrefix=Set;sVVersion=6.000000000;CSBody=.cs;DBody=.pas;bJInnerClasses=1;sJCollection=;sCodePage=;sPHPBody=.php;sPHPVersion=;sPHPGetPrefix=get;sPHPSetPrefix=set;ASBody=.as;PyBody=.py;CPPVersion=;ASVersion=2.000000000;ANSICHeader=.h;ANSICBody=.c;ANSIC_OOSupport=0;ANSIC_NSDLMT=_;ANSIC_RefParam=1;ANSIC_RefStyle=*;ANSIC_RefName=this;ANSIC_ConstructorName=new;ANSIC_DestructorName=delete;CPPCollections=CArray<#TYPE#>\u001fCMap<CString,LPCTSTR,#TYPE#*,#TYPE#*>\u001f;CSCollections=List<#TYPE#>\u001fStack<#TYPE#>\u001fQueue<#TYPE#>\u001f;JCollections=HashSet<#TYPE#>\u001fMap<String,#TYPE#>\u001fList<#TYPE#>\u001f;CPPWrappers=unique_ptr<#TYPE#>\u001fshared_ptr<#TYPE#>\u001fweak_ptr<#TYPE#>\u001f;'));
+INSERT INTO t_genopt VALUES('scenario','usesManagedList=0;');
 CREATE TABLE t_glossary
 (
 	Term TEXT NULL COLLATE NOCASE,
@@ -1181,6 +1195,9 @@ CREATE TABLE t_object
 	ActionFlags TEXT NULL COLLATE NOCASE,
 	EventFlags TEXT NULL COLLATE NOCASE
 );
+INSERT INTO t_object VALUES(1,'Package',0,'Package1',NULL,'Igor','1.000000000',NULL,1,NULL,0,'1',0,NULL,-1,0,-1,-1,-1,'2026-04-06 10:34:13','2026-04-06 10:34:13','Proposed','0',0,'2',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Java',NULL,NULL,NULL,'1.000000000','Public',NULL,NULL,0,'{996A8EB7-5389-46c6-A0D8-8211A13EED67}',0,NULL,NULL,NULL,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO t_object VALUES(2,'Class',0,'Department',NULL,'Igor','1.000000000',NULL,2,NULL,0,'1',0,NULL,-1,0,-1,-1,-1,'2026-04-06 10:34:56','2026-04-06 10:34:56','Proposed','0',0,NULL,NULL,NULL,'0',NULL,NULL,NULL,NULL,NULL,'Java',NULL,NULL,NULL,'1.000000000','Public',NULL,NULL,0,'{D6168696-2B91-4303-802E-AFDB01731FB1}',0,NULL,NULL,NULL,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO t_object VALUES(3,'Class',0,'Employee',NULL,'Igor','1.000000000',NULL,2,NULL,0,'1',0,NULL,-1,0,-1,-1,-1,'2026-04-06 10:35:04','2026-04-06 10:35:04','Proposed','0',0,NULL,NULL,NULL,'0',NULL,NULL,NULL,NULL,NULL,'Java',NULL,NULL,NULL,'1.000000000','Public',NULL,NULL,0,'{8ABD647E-2EF2-4efc-8F91-6671E3D24196}',0,NULL,NULL,NULL,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL);
 CREATE TABLE t_objectconstraint
 (
 	Object_ID INTEGER NOT NULL DEFAULT 0,
@@ -1510,6 +1527,7 @@ CREATE TABLE t_package
 	BatchLoad INTEGER NULL
 );
 INSERT INTO t_package VALUES(1,'Model',0,'2012-04-17 00:01:01','2012-04-17 00:01:01','','{3030B2C7-17BA-48cb-AC33-89AFA98ABED9}','',0,'2012-04-17 00:01:01','2012-04-17 00:01:01','1.000000000',0,'','',0,0,'','',NULL,'',NULL,NULL);
+INSERT INTO t_package VALUES(2,'Package1',1,'2026-04-06 10:34:13','2026-04-06 10:34:13',NULL,'{996A8EB7-5389-46c6-A0D8-8211A13EED67}',NULL,0,NULL,NULL,'1.000000000',0,NULL,NULL,0,0,NULL,NULL,NULL,'isModel=1;VICON=3;',NULL,NULL);
 CREATE TABLE t_palette
 (
 	PaletteID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
@@ -2013,6 +2031,7 @@ CREATE TABLE t_xref
 	Supplier TEXT NULL COLLATE NOCASE,
 	Link TEXT NULL COLLATE NOCASE
 );
+INSERT INTO t_xref VALUES('{6307D3A4-5D26-48ef-A287-BB29C150EA7F}','CustomProperties','diagram properties','Public',NULL,NULL,NULL,NULL,'0','DGS=On=0:CNT=8:W=120:H=40:SG=0:SGH=0:AEB=0:;AR=0;DCL=0;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;Swimlanes=locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;','{50085AF8-39C9-44dd-89E2-23B3ADB7A052}',NULL,NULL);
 CREATE TABLE t_xrefsystem
 (
 	XrefID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
@@ -2579,4 +2598,4 @@ CREATE INDEX ix_xrefuser_type
 CREATE INDEX 'ix_xref_clientname'
  ON 't_xref' ('Client' ASC,'Name' ASC);
 COMMIT;
--- gitsqlite-hash: sha256:577fc552bb1c7c6cbdb6e6e5c589e7fde9f8c2c3f604ca0ea7b9118c444b5775
+-- gitsqlite-hash: sha256:a88e7dddd7b306612900ed6bd1f8529c5f820f9b3bbd3404436eef1e33c02f18
